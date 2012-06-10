@@ -33,7 +33,7 @@ func Go(I Interface) *Routine {
 
 func (r *Routine) run() {
 	defer r.wg.Done()
-	d.I.Run(d.termc)
+	r.I.Run(r.termc)
 }
 
 // If the termc channel of the Interface is not full, signal it. Block until
@@ -51,6 +51,6 @@ func (r *Routine) Terminate() {
 }
 
 // Block until the routine has ended.
-func (d *Routine) Wait() {
-	d.wg.Wait()
+func (r *Routine) Wait() {
+	r.wg.Wait()
 }
