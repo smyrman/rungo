@@ -42,12 +42,10 @@ func (r *Routine) run() {
 // from another goroutine), this function returns at once.
 func (r *Routine) Terminate() {
 	select {
-	default:
-		// pass
-	case r.termc <- false:
-		r.wg.Wait()
+	default: // pass
+	case r.termc <- false: // pass
 	}
-	return
+	r.wg.Wait()
 }
 
 // Block until the routine has ended.
