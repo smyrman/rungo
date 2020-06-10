@@ -1,6 +1,8 @@
 Rungo
 =====
 
+*DEPRECATED*: This repo is no longer maintained. Be user to check out https://github.com/searis/op instead, which allows  similar functionality and much more by relying on context.Context.
+
 Rungo is a small library that lets you dispatch goroutines, and then enables
 you to either wait until they finish or ask for their safe termination.
 
